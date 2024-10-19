@@ -37,10 +37,12 @@ topics:
     web_url: https://github.com/ValeEspinozaF/UFO_splitkb
     image_url: https://github.com/ValeEspinozaF/personal-website/blob/master/assets/images/UFO_keyboard.PNG?raw=true
 
-  - name: Python scripting for 3D modelling
+  - name: Blender Scripting
+    description: Python scrips for 3D modelling
     web_url: https://github.com/ValeEspinozaF/Blender_scripts
     image_url: https://raw.githubusercontent.com/ValeEspinozaF/personal-website/refs/heads/master/assets/images/Blender_python_scripts.PNG
 
-  - name: Easing for Python Animations
+  - name: Easing Animations
+    description: Python class for dynamic data visualizations
     web_url: https://github.com/ValeEspinozaF/Easing-Animations-with-Python/tree/master
     image_url: https://raw.githubusercontent.com/ValeEspinozaF/Easing-Animations-with-Python/refs/heads/master/examples/media/overshoot_ease.gif
