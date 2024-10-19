@@ -37,8 +37,10 @@ topics:
     web_url: https://github.com/ValeEspinozaF/UFO_splitkb
     image_url: https://github.com/ValeEspinozaF/personal-website/blob/master/assets/images/UFO_keyboard.PNG?raw=true
 
-#  - name: Web design
+  - name: Python scripting for 3D modelling
+    web_url: https://github.com/ValeEspinozaF/Blender_scripts
+    image_url: https://raw.githubusercontent.com/ValeEspinozaF/personal-website/refs/heads/master/assets/images/Blender_python_scripts.PNG
 
-#  - name: Sass
-#    web_url: https://github.com/topics/sass
-#    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/sass/sass.png
+  - name: Easing for Python Animations
+    web_url: https://github.com/ValeEspinozaF/Easing-Animations-with-Python/tree/master
+    image_url: https://raw.githubusercontent.com/ValeEspinozaF/Easing-Animations-with-Python/refs/heads/master/examples/media/overshoot_ease.gif
