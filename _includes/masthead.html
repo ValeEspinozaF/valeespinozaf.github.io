@@ -39,10 +39,12 @@
         <div class="{{ metadata_styles }}">
           {% assign service_shortname = info[0] %}
           {% assign service = site.data.other_display_info[service_shortname] %}
-          {% capture icon_call %}
-            {{service.icon_svg}}
-          {% endcapture %}
-          {{ icon_call }}
+          {% if service_shortname == 'email' %}
+            {% octicon info height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:{{ service.name }} %}
+          {% elsif service_shortname == 'employment' %}
+            {% octicon briefcase height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:{{ service.name }} %}
+          {% else %}
+          {% endif %}
           {% if service.url %}
             <a href="{{ service.url }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
               {{ info[1] }}
