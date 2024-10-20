@@ -1,10 +1,10 @@
 email:
   name: Email
   octicon_icon: mail
-  icon_svg: '{% octicon service.octicon_icon height:20 class:"mr-2 v-align-middle" fill:"{{ icon_color }}" aria-label:{{ service_info.name }} %}'
+  icon_svg: '{% octicon mail height:20 class:"mr-2 v-align-middle" fill:"{{ icon_color }}" aria-label:{{ service_info.name }} %}'
 
 employment:
   name: Employment
   url: https://researchprofiles.ku.dk/en/persons/valentina-s-espinoza-fern%C3%A1ndez
   octicon_icon: briefcase
-  icon_svg: '{% octicon service.octicon_icon height:20 class:"mr-2 v-align-middle" fill:"{{ icon_color }}" aria-label:{{ service_info.name }} %}'
+  icon_svg: '{% octicon briefcase height:20 class:"mr-2 v-align-middle" fill:"{{ icon_color }}" aria-label:{{ service_info.name }} %}'
