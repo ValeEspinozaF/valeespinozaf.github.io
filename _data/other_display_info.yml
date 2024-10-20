@@ -1,6 +1,7 @@
 email:
   name: Email
   icon_svg: '{% octicon mail height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:email %}'
+
 employment:
   name: Employment
   url: https://researchprofiles.ku.dk/en/persons/valentina-s-espinoza-fern%C3%A1ndez
