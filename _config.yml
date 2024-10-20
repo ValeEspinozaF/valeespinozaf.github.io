@@ -29,8 +29,12 @@ projects:
     # - repo-name
 
 other_display_info:
-  email: vf@ign.ku.dk
-  employment: University of Copenhagen
+  email: 
+    display: vf@ign.ku.dk
+  
+  employment: 
+    display: University of Copenhagen
+    url: https://researchprofiles.ku.dk/en/persons/valentina-s-espinoza-fern%C3%A1ndez
 
 
 social_media:

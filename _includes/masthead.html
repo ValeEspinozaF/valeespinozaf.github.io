@@ -35,22 +35,23 @@
       </div>
     {% endif %}
     {% if site.other_display_info %}
-      {% for info in site.other_display_info %}
+      {% for service_name, service_info in site.other_display_info %}
         <div class="{{ metadata_styles }}">
-          {% assign service_shortname = info[0] %}
-          {% assign service = site.data.other_display_info[service_shortname] %}
-          {% if service_shortname == 'email' %}
-            {% octicon info height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:{{ service.name }} %}
-          {% elsif service_shortname == 'employment' %}
+          <!-- {% assign service_shortname = info[0] %} -->
+          <!-- {% assign service = site.data.other_display_info[service_shortname] %} -->
+          {% assign service = service_info %}
+          {% if service.octicon_icon == 'mail' %}
+            {% octicon mail height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:{{ service.name }} %}
+          {% elsif service.octicon_icon == 'briefcase' %}
             {% octicon briefcase height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:{{ service.name }} %}
           {% else %}
           {% endif %}
           {% if service.url %}
             <a href="{{ service.url }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
-              {{ info[1] }}
+              {{ service.display }}
             </a>
           {% else %}
-            {{ info[1] }}
+            {{ service.display }}
           {% endif %}
         </div>
       {% endfor %}
