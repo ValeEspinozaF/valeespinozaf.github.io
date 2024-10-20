@@ -39,7 +39,7 @@
         <div class="{{ metadata_styles }}">
           {% assign service_shortname = info[0] %}
           {% assign service = site.data.other_display_info[service_shortname] %}
-          {% octicon service.icon height:20 class:"mr-2 v-align-middle" fill:"{{ icon_color }}" aria-label:service.name %}
+          {% octicon service.octicon_icon height:20 class:"mr-2 v-align-middle" fill:"{{ icon_color }}" aria-label:service.name %}
           {% if service.url %}
             <a href="{{ service.url }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
               {{ info[1] }}
