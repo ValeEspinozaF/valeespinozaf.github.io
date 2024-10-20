@@ -40,7 +40,7 @@
           {% assign service_shortname = info[0] %}
           {% assign service = site.data.other_display_info[service_shortname] %}
           {% capture icon_call %}
-            {% octicon service.octicon_icon height:20 class:"mr-2 v-align-middle" fill:"{{ icon_color }}" aria-label:{{ service_info.name }} %}
+            {{service.icon_svg}}
           {% endcapture %}
           {{ icon_call | markdownify }}
           {% if service.url %}
