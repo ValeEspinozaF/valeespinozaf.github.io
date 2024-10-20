@@ -41,10 +41,12 @@
           {% assign service = site.data.other_display_info[service_shortname] %}
           {{ service.icon_svg }}<span class="d-none">{{ service.name }}</span>
           {% if service.url %}
+            {{ service.icon_svg }}<span class="d-none">{{ service.name }}</span>
             <a href="{{ service.url }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
               {{ info[1] }}
             </a>
           {% else %}
+            {{ service.icon_svg }}<span class="d-none">{{ service.name }}</span>
             {{ info[1] }}
           {% endif %}
         </div>
