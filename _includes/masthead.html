@@ -42,7 +42,7 @@
           {% capture icon_call %}
             {{service.icon_svg}}
           {% endcapture %}
-          {{ icon_call | markdownify }}
+          {{ icon_call }}
           {% if service.url %}
             <a href="{{ service.url }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
               {{ info[1] }}
