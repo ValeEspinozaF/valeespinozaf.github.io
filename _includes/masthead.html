@@ -34,6 +34,22 @@
         {{ user.location }}
       </div>
     {% endif %}
+    {% if site.other_display_info %}
+      {% for info in site.other_display_info %}
+        <div class="{{ metadata_styles }}">
+          {% assign service_shortname = info[0] %}
+          {% assign service = site.data.other_display_info[service_shortname] %}
+          {{ service.icon_svg }}<span class="d-none">{{ service.name }}</span>
+          {% if service.url %}
+            <a href="{{ service.url }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
+              {{ info[1] }}
+            </a>
+          {% else %}
+            {{ info[1] }}
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% endif %}
     {% if site.social_media %}
       <div class="d-flex flex-wrap flex-items-start {% if site.layout == 'stacked' %}flex-justify-center mt-1 mt-md-3{% endif %}">
         {% for account in site.social_media %}
