@@ -2,3 +2,19 @@
 layout: research
 title: Research
 ---
+
+
+<script>
+    function handleResize() {
+      const divToHide = document.querySelector('.hide-on-small');
+      
+      if (window.innerWidth <= 768) {
+        divToHide.style.display = 'none';
+      } else {
+        divToHide.style.display = '';
+      }
+    }
+  
+    document.addEventListener('DOMContentLoaded', handleResize);
+    window.addEventListener('resize', handleResize);
+  </script>
