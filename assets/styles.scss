@@ -25,6 +25,12 @@
   }
 }
 
+ul, ol {
+  padding-left: 32px;
+  margin-bottom: 26px;
+  list-style-position: inside; 
+}
+
 .emoji {
   width: 18px;
   height: auto;
@@ -56,16 +62,7 @@
   }
 }
 
-ul, ol {
-  padding-left: 32px;
-  margin-bottom: 26px;
-  list-style-position: inside; 
-}
 
-li ul, li ol {
-  padding-left: 26px;
-  margin-bottom: 10px;
-}
 
 .highlight {
   font-weight: bold; 
