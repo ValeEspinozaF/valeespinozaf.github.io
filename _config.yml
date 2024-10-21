@@ -3,6 +3,7 @@ style: light
 
 plugins:
   - jekyll-octicons
+  - jekyll-php
   - jekyll-github-metadata
   - jemoji
 
