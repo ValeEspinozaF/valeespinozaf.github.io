@@ -40,9 +40,9 @@
           {% assign service_shortname = info[0] %}
           {% assign service = site.data.other_display_info[service_shortname] %}
           {% if service.octicon_icon == 'mail' %}
-            {% octicon mail height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:{{ service.name }} %}
+            {% octicon mail height:16 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:{{ service.name }} %}
           {% elsif service.octicon_icon == 'briefcase' %}
-            {% octicon briefcase height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:{{ service.name }} %}
+            {% octicon briefcase height:16 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:{{ service.name }} %}
           {% else %}
           {% endif %}
           {% if info[1].url %}
