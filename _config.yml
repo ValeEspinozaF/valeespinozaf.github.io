@@ -8,7 +8,7 @@ plugins:
   - jemoji
 
 permalink: /:path/
-include: [.php]
+
 
 defaults:
   -
