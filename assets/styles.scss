@@ -94,6 +94,7 @@ li {
 #parent {
   display: flex;
   flex-direction: column;
+  min-height: calc(100vh - 60px);
 }
 #child1 {
   flex-grow: 1;
