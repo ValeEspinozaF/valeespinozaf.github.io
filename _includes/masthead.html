@@ -58,7 +58,7 @@
       {% endif %}
     </div> 
     {% if site.social_media %}
-      <div class="d-flex flex-wrap flex-items-start {% if site.layout == 'stacked' %}flex-justify-center mt-1 mt-md-3{% endif %}">
+      <div style="flex-grow: 0;">
         {% for account in site.social_media %}
           <div class="{% unless forloop.last == true %}mr-3{% endunless %} mb-3">
             {% assign service_shortname = account[0] %}
@@ -69,9 +69,6 @@
           </div>
         {% endfor %}
       </div>
-    {% endif %}
-    {% if user.hireable %}
-      <span title="Hire me" class="d-inline-block f5 rounded-2 text-white bg-green py-1 px-2">Available for hire</span>
     {% endif %}
   </div>
 {% endif %}
