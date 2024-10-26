@@ -11,50 +11,52 @@
 </p>
 
 {% if include.metadata %}
-  <div class="f4 mb-6">
-    {% if user.name %}
-      <div class="{{ metadata_styles }}">
-        {% octicon mark-github height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:GitHub %}
-        <a href="https://github.com/{{ user.login }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
-          @{{ user.login }}
-        </a>
-      </div>
-    {% endif %}
-    {% if user.email %}
-      <div class="{{ metadata_styles }}">
-        {% octicon mail height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:email %}
-        <a href="mailto:{{ user.email }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
-          {{ user.email }}
-        </a>
-      </div>
-    {% endif %}
-    {% if user.location %}
-      <div class="{{ metadata_styles }} {% if site.style == 'dark' %}text-white{% endif %}">
-        {% octicon location height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:Location %}
-        {{ user.location }}
-      </div>
-    {% endif %}
-    {% if site.other_display_info %}
-      {% for info in site.other_display_info %}
+  <div class="f4 mb-6 d-flex flex-column">
+    <div style="flex-grow: 1;">
+      {% if user.name %}
         <div class="{{ metadata_styles }}">
-          {% assign service_shortname = info[0] %}
-          {% assign service = site.data.other_display_info[service_shortname] %}
-          {% if service.octicon_icon == 'mail' %}
-            {% octicon mail height:16 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:{{ service.name }} %}
-          {% elsif service.octicon_icon == 'briefcase' %}
-            {% octicon briefcase height:16 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:{{ service.name }} %}
-          {% else %}
-          {% endif %}
-          {% if info[1].url %}
-            <a href="{{ info[1].url }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
-              {{ info[1].display }}
-            </a>
-          {% else %}
-            {{ info[1].display }}
-          {% endif %}
+          {% octicon mark-github height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:GitHub %}
+          <a href="https://github.com/{{ user.login }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
+            @{{ user.login }}
+          </a>
         </div>
-      {% endfor %}
-    {% endif %}
+      {% endif %}
+      {% if user.email %}
+        <div class="{{ metadata_styles }}">
+          {% octicon mail height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:email %}
+          <a href="mailto:{{ user.email }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
+            {{ user.email }}
+          </a>
+        </div>
+      {% endif %}
+      {% if user.location %}
+        <div class="{{ metadata_styles }} {% if site.style == 'dark' %}text-white{% endif %}">
+          {% octicon location height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:Location %}
+          {{ user.location }}
+        </div>
+      {% endif %}
+      {% if site.other_display_info %}
+        {% for info in site.other_display_info %}
+          <div class="{{ metadata_styles }}">
+            {% assign service_shortname = info[0] %}
+            {% assign service = site.data.other_display_info[service_shortname] %}
+            {% if service.octicon_icon == 'mail' %}
+              {% octicon mail height:16 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:{{ service.name }} %}
+            {% elsif service.octicon_icon == 'briefcase' %}
+              {% octicon briefcase height:16 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:{{ service.name }} %}
+            {% else %}
+            {% endif %}
+            {% if info[1].url %}
+              <a href="{{ info[1].url }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
+                {{ info[1].display }}
+              </a>
+            {% else %}
+              {{ info[1].display }}
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div> 
     {% if site.social_media %}
       <div class="d-flex flex-wrap flex-items-start {% if site.layout == 'stacked' %}flex-justify-center mt-1 mt-md-3{% endif %}">
         {% for account in site.social_media %}
