@@ -43,6 +43,10 @@
   .hide-on-small {
     display: none;
   }
+  
+  .bg-image::before {
+    background-image: url('https://raw.githubusercontent.com/ValeEspinozaF/personal-website/refs/heads/master/assets/images/Andes_globe_horizontal_nobackground.png');
+  }
 }
 
 ul {
