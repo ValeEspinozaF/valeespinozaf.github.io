@@ -11,7 +11,7 @@
 </p>
 
 {% if include.metadata %}
-  <div class="f4 mb-6 d-flex flex-column">
+  <div id="parent" class="f4 mb-6">
     <div style="flex-grow: 1;">
       {% if user.name %}
         <div class="{{ metadata_styles }}">
@@ -58,7 +58,7 @@
       {% endif %}
     </div> 
     {% if site.social_media %}
-      <div style="flex-grow: 0;">
+      <div id="child">
         {% for account in site.social_media %}
           <div class="{% unless forloop.last == true %}mr-3{% endunless %} mb-3">
             {% assign service_shortname = account[0] %}

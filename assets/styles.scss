@@ -67,6 +67,14 @@ li {
   }
 }
 
+#parent {
+  position:relative;
+}
+#child {
+  position:absolute;
+  bottom:0;
+}
+
 .highlight {
   font-weight: bold; 
 }
