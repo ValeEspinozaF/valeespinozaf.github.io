@@ -68,13 +68,12 @@ li {
 }
 
 #parent {
-  position:relative;
+  display: flex;
+  flex-direction: column;
 }
-#child {
-  position:absolute;
-  bottom:0;
+#child1 {
+  flex-grow: 1;
 }
-
 .highlight {
   font-weight: bold; 
 }
