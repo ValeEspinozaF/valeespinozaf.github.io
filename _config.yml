@@ -39,8 +39,8 @@ other_display_info:
     url: https://researchprofiles.ku.dk/en/persons/valentina-s-espinoza-fern%C3%A1ndez
 
 
-social_media:
-  researchgate: Valentina-Espinoza-2
+# social_media:
+#   researchgate: Valentina-Espinoza-2
 
 topics:
   - name: Ergonomic Keyboards
