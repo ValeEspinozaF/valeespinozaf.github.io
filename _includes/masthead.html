@@ -13,7 +13,8 @@
 {% if include.metadata %}
   <div id="parent" class="f4 mb-6">
     <div id="child1">
-      {% if user.name %}
+      <h3>Hello</h3>
+      <!-- {% if user.name %}
         <div class="{{ metadata_styles }}">
           {% octicon mark-github height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:GitHub %}
           <a href="https://github.com/{{ user.login }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
@@ -55,7 +56,7 @@
             {% endif %}
           </div>
         {% endfor %}
-      {% endif %}
+      {% endif %} -->
     </div> 
     {% if site.social_media %}
       <div id="child2">
