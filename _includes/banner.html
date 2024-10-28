@@ -9,26 +9,31 @@
         <p style="line-height: 1.5; margin: 0;">CURRICULUM</p>
     </a>
     <a id="language-toggle" class="language-link" href="#" onclick="toggleLanguage(event)">
-        <i class="fas fa-globe"></i> <span id="language-text">EN</span>
+        <span id="language-text">EN</span>
     </a>
 </div>
 
 <script>
     let currentLanguage = 'en'; 
 
-    function toggleLanguage() {
+    function toggleLanguage(event) {
+        event.preventDefault(); 
         const languageText = document.getElementById('language-text');
+        const englishContent = document.querySelector('.en');
+        const spanishContent = document.querySelector('.es');
 
         if (currentLanguage === 'en') {
             currentLanguage = 'es'; 
             languageText.textContent = 'ES'; 
+            englishContent.classList.add('hidden'); 
+            spanishContent.classList.remove('hidden'); 
         } else {
-            currentLanguage = 'en';
+            currentLanguage = 'en'; 
             languageText.textContent = 'EN'; 
+            englishContent.classList.remove('hidden');
+            spanishContent.classList.add('hidden');
         }
 
-        // Here you would typically add your language switching logic
-        // For example, reloading content based on the selected language
         console.log(`Language switched to: ${currentLanguage}`);
     }
 </script>
