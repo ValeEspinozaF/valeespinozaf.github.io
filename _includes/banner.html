@@ -8,9 +8,12 @@
     <a href="/personal-website/tab_curriculum" class="topic-link d-flex justify-content-center align-items-center text-gray" style="flex: 1; display: flex; justify-content: center; align-items: center; text-align: center;">
         <p style="line-height: 1.5; margin: 0;">CURRICULUM</p>
     </a>
-    <a id="language-toggle" class="language-link" href="#" onclick="toggleLanguage(event)">
-        <span id="language-text">EN</span>
-    </a>
+    <div class="d-flex" style="width: 200px; justify-content: flex-end;">
+        <a id="language-toggle" class="language-link" href="#" onclick="toggleLanguage(event)">
+            {% octicon globe height:20 class:"mr-1 v-align-middle" fill:"#586069" aria-label:globe %}
+            <span id="language-text">EN</span>
+        </a>
+    </div>
 </div>
 
 <script>
