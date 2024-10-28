@@ -8,8 +8,27 @@
     <a href="/personal-website/tab_curriculum" class="topic-link d-flex justify-content-center align-items-center text-gray" style="flex: 1; display: flex; justify-content: center; align-items: center; text-align: center;">
         <p style="line-height: 1.5; margin: 0;">CURRICULUM</p>
     </a>
-    <div class="ml-auto">
-        <button class="language-button" onclick="setLanguage('en')">EN</button>
-        <button class="language-button" onclick="setLanguage('es')">ES</button>
-    </div>
+    <button id="language-toggle" class="language-button" onclick="toggleLanguage()">
+        <i class="fas fa-globe"></i> <span id="language-text">EN</span>
+    </button>
 </div>
+
+<script>
+    let currentLanguage = 'en'; 
+
+    function toggleLanguage() {
+        const languageText = document.getElementById('language-text');
+
+        if (currentLanguage === 'en') {
+            currentLanguage = 'es'; 
+            languageText.textContent = 'ES'; 
+        } else {
+            currentLanguage = 'en';
+            languageText.textContent = 'EN'; 
+        }
+
+        // Here you would typically add your language switching logic
+        // For example, reloading content based on the selected language
+        console.log(`Language switched to: ${currentLanguage}`);
+    }
+</script>

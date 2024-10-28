@@ -24,7 +24,18 @@
     margin: 5px;
     font-size: 16px;
     cursor: pointer;
+    text-decoration: none;
+    color: #cfcece;
+    border-radius: 0px;
+    transition: 0.3s;
+    overflow: hidden;
+    background-color: #f0f0f0;
 }
+
+.language-button i {
+  margin-right: 5px; /* Space between icon and text */
+}
+
 
 .hidden { display: none; }
 
