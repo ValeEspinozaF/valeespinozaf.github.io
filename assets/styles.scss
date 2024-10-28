@@ -19,6 +19,15 @@
     width: 12px;
 }
 
+.language-button {
+    padding: 8px 12px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.hidden { display: none; }
+
 .bg-image {
     position: relative;
     overflow: hidden; 
