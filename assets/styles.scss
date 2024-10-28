@@ -35,7 +35,9 @@
   margin-right: 5px; 
 }
 
-.hidden { display: none; }
+.hidden {
+    display: none !important;
+}
 
 .bg-image {
     position: relative;
