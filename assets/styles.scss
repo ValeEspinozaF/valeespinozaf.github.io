@@ -19,23 +19,19 @@
     width: 12px;
 }
 
-.language-button {
-    padding: 8px 12px;
-    margin: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #cfcece;
-    border-radius: 0px;
-    transition: 0.3s;
-    overflow: hidden;
-    background-color: #f0f0f0;
+.language-link {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0; 
+    border: none; 
+    cursor: pointer; 
+    text-decoration: none; 
+    color: gray;
 }
 
-.language-button i {
-  margin-right: 5px; /* Space between icon and text */
+.language-link i {
+  margin-right: 5px; 
 }
-
 
 .hidden { display: none; }
 
