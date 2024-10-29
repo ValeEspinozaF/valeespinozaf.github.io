@@ -30,26 +30,30 @@
 </div>
 
 <script>
-    let currentLanguage = 'en'; 
+    let currentLanguage = 'en';
 
     function toggleLanguage(event) {
         event.preventDefault(); 
         const languageText = document.getElementById('language-text');
-        const englishContent = document.querySelector('.en');
-        const spanishContent = document.querySelector('.es');
-
+        const englishContent = document.querySelectorAll('.en');
+        const spanishContent = document.querySelectorAll('.es');
+    
         if (currentLanguage === 'en') {
             currentLanguage = 'es'; 
-            languageText.textContent = 'ES'; 
-            englishContent.classList.add('hidden'); 
-            spanishContent.classList.remove('hidden'); 
+            languageText.textContent = 'ES';
+    
+            // Hide all English content and show all Spanish content
+            englishContent.forEach(element => element.classList.add('hidden'));
+            spanishContent.forEach(element => element.classList.remove('hidden'));
         } else {
             currentLanguage = 'en'; 
-            languageText.textContent = 'EN'; 
-            englishContent.classList.remove('hidden');
-            spanishContent.classList.add('hidden');
+            languageText.textContent = 'EN';
+    
+            // Show all English content and hide all Spanish content
+            englishContent.forEach(element => element.classList.remove('hidden'));
+            spanishContent.forEach(element => element.classList.add('hidden'));
         }
-
+    
         console.log(`Language switched to: ${currentLanguage}`);
     }
 </script>
