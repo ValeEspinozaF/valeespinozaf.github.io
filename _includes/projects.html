@@ -1,8 +1,15 @@
-<h2 {% if site.style == 'dark' %}class="text-white"{% endif %} style="display: flex; align-items: center; line-height: 1.5">
+<h2 class="en {% if site.style == 'dark' %}text-white{% endif %}" 
+    style="display: flex; align-items: center; line-height: 1.5;">
   {% octicon archive height:24 class:"mr-2" fill:"currentColor" aria-label:"Project" %}
   My Projects
 </h2>
-<p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">GitHub repositories that I've built.</p>
+<h2 class="es hidden{% if site.style == 'dark' %}text-white{% endif %}" 
+    style="display: flex; align-items: center; line-height: 1.5;">
+  {% octicon archive height:24 class:"mr-2" fill:"currentColor" aria-label:"Project" %}
+  Mis Proyectos
+</h2>
+<p class="en f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">GitHub repositories that I've built.</p>
+<p class="es hidden f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Repositorios de GitHub que he hecho.</p>
 <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
   {% if site.projects.sort_by == 'stars' %}
     {% assign sort_order = 'stargazers_count', 'last' %}
