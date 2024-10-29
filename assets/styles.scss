@@ -61,7 +61,7 @@
 
 @media (max-width: 768px) {
   .hide-on-small {
-    display: none;
+    display: none !important;
   }
   
   .bg-image::before {
