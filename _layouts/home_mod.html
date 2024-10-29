@@ -64,15 +64,4 @@
   </div>
 {% endif %}
 
-<script>
-  function setLanguage(lang) {
-    document.querySelectorAll('.en, .es').forEach(element => {
-      element.classList.add('hidden');
-    });
-    document.querySelectorAll(`.${lang}`).forEach(element => {
-      element.classList.remove('hidden');
-    });
-  }
-</script>
-
 {% include footer.html %}
