@@ -118,7 +118,7 @@ li {
 #parent {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh -150px - 60px);
 }
 #child1 {
   flex-grow: 1;
