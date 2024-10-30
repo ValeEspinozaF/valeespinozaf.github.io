@@ -4,14 +4,15 @@
   {% assign metadata_styles = 'd-flex flex-items-center mb-3' %}
 {% endif %}
 
-<!-- <img src="{{ user.avatar_url }}" class="circle mb-3" style="max-width: 150px;"> -->
-<div style="display: flex; align-items: center;">
-  <img src="{{ user.avatar_url }}" class="circle mb-3" style="flex: 1; max-width: 150px; margin-right: 10px;">
-  <div class="hidden show-on-small d-flex justify-content-end">
+<div style="display: flex; align-items: center; justify-content: space-between;">
+  <img src="{{ user.avatar_url }}" class="circle mb-3" style="max-width: 150px; margin-right: 10px;">
+  
+  <div class="hidden show-on-small d-flex">
     <a id="language-toggle" class="language-link me-2" href="#" onclick="toggleLanguage(event)">
         {% octicon globe height:16 class:"mr-1 v-align-middle" fill:"#586069" aria-label:globe %}
         <span id="language-text">EN</span>
     </a>
+  </div>
 </div>
 </div>
 <h1 class="{% if site.style == 'dark' %}text-white{% endif %} mb-2 lh-condensed">{% if user.name %}{{ user.name }}{% else %}{{ user.login }}{% endif %}</h1>
