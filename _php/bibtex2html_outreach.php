@@ -807,6 +807,16 @@ function bibstring2html($fileContent, $displayTypes = NULL, $groupType = NULL, $
 	$accentTable = make_accent_table();
 	if(!is_array($fileContent)) $fileContent = explode("\n", $fileContent);
 	
+	$translations = [
+		"Upcoming" => "Próximos",
+		"Passed" => "Pasados",
+		"Articles" => "Artículos",
+		"Presentations" => "Presentaciones",
+		"Workshops" => "Talleres",
+		"Oral Presentations" => "Presentaciones Orales",
+		"Posters" => "Posters",
+	];
+
 	// The $entries array will hold the formatted bibtex entries.
 	// Structure:
  	//   - If grouping by types is activated, then it is first indexed by type, then by year
@@ -930,9 +940,11 @@ function bibstring2html($fileContent, $displayTypes = NULL, $groupType = NULL, $
 		foreach($dateTypes as $date => $dateName) {
 			if(isset($entries[$date])) {
 				krsort($entries[$date]);
-				$ret .= '<h1 class="f00-light lh-condensed mb-5">'.$dateName.'</h1>';
+				$ret .= '<h1 class="en f00-light lh-condensed mb-5">'.$dateName.'</h1>';
+				$ret .= '<h1 class="es hidden f00-light lh-condensed mb-5">'.$translations[$dateName].'</h1>';
 				foreach($entries[$date] as $type => $typeEntries) {
-					$ret .= '<h3>'.$displayTypes[$type].'</h3>';
+					$ret .= '<h3 class="en">'.$displayTypes[$type].'</h3>';
+					$ret .= '<h3 class="es hidden">'.$translations[$displayTypes[$type]].'</h3>';
 					$ret .= '<ul>';
 					uksort($typeEntries, 'strcoll');
 					foreach($typeEntries as $index => $info) {
