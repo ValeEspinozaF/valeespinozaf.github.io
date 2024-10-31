@@ -32,6 +32,7 @@
 <script>
     // Get the current language from localStorage, default to 'en' if not set
     let currentLanguage = localStorage.getItem('language') || 'en';
+    console.log(`Prior currentLanguage: ${currentLanguage}`);
 
     // Function to toggle language
     function toggleLanguage(event) {
@@ -39,6 +40,7 @@
         
         // Toggle language value
         currentLanguage = currentLanguage === 'en' ? 'es' : 'en';
+        console.log(`Toggling to currentLanguage: ${currentLanguage}`);
 
         // Save new language preference to localStorage
         localStorage.setItem('language', currentLanguage);
@@ -49,6 +51,10 @@
 
     // Function to apply the current language setting
     function applyLanguage() {
+
+        const currentLanguage = localStorage.getItem('language') || 'en';
+        console.log(`Still currentLanguage: ${currentLanguage}`);
+
         const languageText = document.getElementById('language-text');
         const englishContent = document.querySelectorAll('.en');
         const spanishContent = document.querySelectorAll('.es');
@@ -58,9 +64,11 @@
 
         // Show or hide language-specific content based on the current language
         if (currentLanguage === 'en') {
+            console.log(`Current Language is indeed EN`);
             englishContent.forEach(element => element.classList.remove('hidden'));
             spanishContent.forEach(element => element.classList.add('hidden'));
         } else {
+            console.log(`Current Language is indeed ES`);
             englishContent.forEach(element => element.classList.add('hidden'));
             spanishContent.forEach(element => element.classList.remove('hidden'));
         }
