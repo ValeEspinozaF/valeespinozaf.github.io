@@ -754,6 +754,17 @@ function bibstring2html($fileContent, $displayTypes = NULL, $groupType = NULL, $
 	$accentTable = make_accent_table();
 	if(!is_array($fileContent)) $fileContent = explode("\n", $fileContent);
 	
+	$translations = [
+		"Articles" => "Artículos",
+		"Presentations" => "Presentaciones",
+		"Master's Theses" => "Tesis de Maestría",
+		"PhD Theses" => "Tesis de Doctorado",
+		"Books" => "Libros",
+		"In Proceedings" => "En Actas",
+		"Workshops" => "Talleres",
+		"Oral Presentations" => "Presentaciones Orales",
+	];
+
 	// The $entries array will hold the formatted bibtex entries.
 	// Structure:
  	//   - If grouping by types is activated, then it is first indexed by type, then by year
@@ -865,7 +876,12 @@ function bibstring2html($fileContent, $displayTypes = NULL, $groupType = NULL, $
 		foreach($displayTypes as $type => $typeName) {
 			if(isset($entries[$type])) {
 				uksort($entries[$type], 'strcoll');
-				$ret .= '<h2>'.$typeName.'</h2>';
+				$ret .= '<h2 class="en">'.$typeName.'</h2>';
+				if(array_key_exists($typeName, $translations)) {
+					$ret .= '<h2 class="es hidden">'.$translations[$typeName].'</h2>';
+				} else { 
+					$ret .= '<h2 class="es hidden">'.$typeName.'</h2>';
+				}
 				$ret .= '<ul>';
 				foreach($entries[$type] as $index => $info) {
 					if(trim($info['text']) != '') $ret .= '<li>'.$info['text'].'</li>';
@@ -900,6 +916,6 @@ function bibstring2html($fileContent, $displayTypes = NULL, $groupType = NULL, $
 	return $ret;
 }
 
-// echo bibfile2html(dirname(__DIR__).'/_data/scholar_entries_2024-10-21.bib', NULL, NULL, false, NULL, 'Espinoza');
+echo bibfile2html(dirname(__DIR__).'/_data/scholar_entries_2024-10-21.bib', NULL, NULL, false, NULL, 'Espinoza');
 
 ?>

@@ -29,34 +29,6 @@
     </div>
 </div>
 
-<!-- <script>
-    let currentLanguage = 'en';
-
-    function toggleLanguage(event) {
-        event.preventDefault(); 
-        const languageTexts = document.querySelectorAll('.language-text'); 
-        const englishContent = document.querySelectorAll('.en');
-        const spanishContent = document.querySelectorAll('.es');
-
-        if (currentLanguage === 'en') {
-            currentLanguage = 'es';
-            languageTexts.forEach(languageText => languageText.textContent = 'ES'); 
-
-            // Hide all English content and show all Spanish content
-            englishContent.forEach(element => element.classList.add('hidden'));
-            spanishContent.forEach(element => element.classList.remove('hidden'));
-        } else {
-            currentLanguage = 'en';
-            languageTexts.forEach(languageText => languageText.textContent = 'EN'); 
-
-            // Show all English content and hide all Spanish content
-            englishContent.forEach(element => element.classList.remove('hidden'));
-            spanishContent.forEach(element => element.classList.add('hidden'));
-        }
-
-        console.log(`Language switched to: ${currentLanguage}`);
-    }
-</script> -->
 
 <script>
     // Get the current language from localStorage, default to 'en' if not set
