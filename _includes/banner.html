@@ -29,6 +29,35 @@
     </div>
 </div>
 
+<!-- <script>
+    let currentLanguage = 'en';
+
+    function toggleLanguage(event) {
+        event.preventDefault(); 
+        const languageTexts = document.querySelectorAll('.language-text'); 
+        const englishContent = document.querySelectorAll('.en');
+        const spanishContent = document.querySelectorAll('.es');
+
+        if (currentLanguage === 'en') {
+            currentLanguage = 'es';
+            languageTexts.forEach(languageText => languageText.textContent = 'ES'); 
+
+            // Hide all English content and show all Spanish content
+            englishContent.forEach(element => element.classList.add('hidden'));
+            spanishContent.forEach(element => element.classList.remove('hidden'));
+        } else {
+            currentLanguage = 'en';
+            languageTexts.forEach(languageText => languageText.textContent = 'EN'); 
+
+            // Show all English content and hide all Spanish content
+            englishContent.forEach(element => element.classList.remove('hidden'));
+            spanishContent.forEach(element => element.classList.add('hidden'));
+        }
+
+        console.log(`Language switched to: ${currentLanguage}`);
+    }
+</script> -->
+
 <script>
     // Get the current language from localStorage, default to 'en' if not set
     let currentLanguage = localStorage.getItem('language') || 'en';
@@ -55,23 +84,28 @@
         const currentLanguage = localStorage.getItem('language') || 'en';
         console.log(`Still currentLanguage: ${currentLanguage}`);
 
-        const languageText = document.getElementById('language-text');
+        const languageTexts = document.querySelectorAll('.language-text'); 
         const englishContent = document.querySelectorAll('.en');
         const spanishContent = document.querySelectorAll('.es');
 
         // Update the language indicator text
-        languageText.textContent = currentLanguage.toUpperCase();
+        if (currentLanguage === 'es') {
+            console.log(`Indeed currentLanguage is ES`);
+            languageTexts.forEach(languageText => languageText.textContent = 'ES'); 
 
-        // Show or hide language-specific content based on the current language
-        if (currentLanguage === 'en') {
-            console.log(`Current Language is indeed EN`);
-            englishContent.forEach(element => element.classList.remove('hidden'));
-            spanishContent.forEach(element => element.classList.add('hidden'));
-        } else {
-            console.log(`Current Language is indeed ES`);
+            // Hide all English content and show all Spanish content
             englishContent.forEach(element => element.classList.add('hidden'));
             spanishContent.forEach(element => element.classList.remove('hidden'));
+        } else {
+            console.log(`Indeed currentLanguage is EN`);
+            languageTexts.forEach(languageText => languageText.textContent = 'EN'); 
+
+            // Show all English content and hide all Spanish content
+            englishContent.forEach(element => element.classList.remove('hidden'));
+            spanishContent.forEach(element => element.classList.add('hidden'));
         }
+
+        console.log(`Language switched to: ${currentLanguage}`);
     }
 
     // Apply the language setting when the page loads
