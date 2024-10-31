@@ -30,30 +30,51 @@
 </div>
 
 <script>
-    let currentLanguage = 'en';
+    // Set the default language based on localStorage
+    let currentLanguage = localStorage.getItem('language') || 'en';
 
+    // Function to toggle language and store the preference
     function toggleLanguage(event) {
-        event.preventDefault(); 
-        const languageTexts = document.querySelectorAll('.language-text'); 
+        event.preventDefault();
+        
+        const languageText = document.getElementById('language-text');
         const englishContent = document.querySelectorAll('.en');
         const spanishContent = document.querySelectorAll('.es');
 
+        // Toggle between languages
         if (currentLanguage === 'en') {
             currentLanguage = 'es';
-            languageTexts.forEach(languageText => languageText.textContent = 'ES'); 
-
-            // Hide all English content and show all Spanish content
+            languageText.textContent = 'ES';
             englishContent.forEach(element => element.classList.add('hidden'));
             spanishContent.forEach(element => element.classList.remove('hidden'));
         } else {
             currentLanguage = 'en';
-            languageTexts.forEach(languageText => languageText.textContent = 'EN'); 
-
-            // Show all English content and hide all Spanish content
+            languageText.textContent = 'EN';
             englishContent.forEach(element => element.classList.remove('hidden'));
             spanishContent.forEach(element => element.classList.add('hidden'));
         }
 
-        console.log(`Language switched to: ${currentLanguage}`);
+        // Store the current language in localStorage
+        localStorage.setItem('language', currentLanguage);
     }
+
+    // Function to set the language based on saved preference
+    function setLanguageOnLoad() {
+        const languageText = document.getElementById('language-text');
+        const englishContent = document.querySelectorAll('.en');
+        const spanishContent = document.querySelectorAll('.es');
+
+        if (currentLanguage === 'es') {
+            languageText.textContent = 'ES';
+            englishContent.forEach(element => element.classList.add('hidden'));
+            spanishContent.forEach(element => element.classList.remove('hidden'));
+        } else {
+            languageText.textContent = 'EN';
+            englishContent.forEach(element => element.classList.remove('hidden'));
+            spanishContent.forEach(element => element.classList.add('hidden'));
+        }
+    }
+
+    // Initialize language setting on page load
+    document.addEventListener('DOMContentLoaded', setLanguageOnLoad);
 </script>
