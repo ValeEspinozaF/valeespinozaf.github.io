@@ -59,6 +59,10 @@
     z-index: -1; 
 }
 
+.masthead-wrapper {
+    min-height: auto;
+  }
+
 @media (max-width: 768px) {
   .hide-on-small {
     display: none !important;
@@ -70,6 +74,9 @@
   
   .bg-image::before {
     background-image: url('https://raw.githubusercontent.com/ValeEspinozaF/personal-website/refs/heads/master/assets/images/Andes_globe_horizontal_nobackground.png');
+  }
+  .masthead-wrapper {
+    min-height: 100vh;
   }
 }
 
