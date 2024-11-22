@@ -60,7 +60,7 @@
 }
 
 .masthead-wrapper {
-    min-height: auto;
+  max-height: 80vh;
   }
 
 @media (max-width: 768px) {
@@ -76,7 +76,9 @@
     background-image: url('https://raw.githubusercontent.com/ValeEspinozaF/personal-website/refs/heads/master/assets/images/Andes_globe_horizontal_nobackground.png');
   }
   .masthead-wrapper {
-    min-height: 100vh;
+    max-height: none; /* Remove max-height restriction on medium and larger screens */
+    min-height: 100vh; /* Restore full height behavior */
+    overflow-y: visible;
   }
 }
 
