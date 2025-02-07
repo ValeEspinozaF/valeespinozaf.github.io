@@ -4,6 +4,7 @@ style: light
 plugins:
   - jekyll-octicons
   - jekyll-php
+  - jekyll-seo-tag
   - jekyll-github-metadata
   - jemoji
 
