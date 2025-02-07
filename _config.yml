@@ -9,7 +9,7 @@ plugins:
   - jemoji
 
 permalink: /:path/
-
+url: https://valeespinozaf.github.io
 
 defaults:
   -
