@@ -10,6 +10,7 @@ plugins:
 
 permalink: /:path/
 url: https://valeespinozaf.github.io
+baseurl: ""
 
 defaults:
   -
